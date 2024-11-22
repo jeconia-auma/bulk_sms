@@ -1,44 +1,47 @@
-<?php require_once("partials/header.php"); ?>
+<?php require_once("partials2/header.php"); ?>
 
 
-  <section>
+<section>
 
-   <div class="signin"> 
+    <div class="signin"> 
 
-    <div class="content"> 
+        <div class="content"> 
 
-     <h2>Sign In</h2> 
+          <h2>Sign In</h2> 
 
-     <div class="form"> 
+          <div class="form">
+            <form action="logins.php" method="post" class="form">
 
-      <div class="inputBox"> 
+              <div class="inputBox"> 
 
-       <input type="email" required> <i>email</i> 
+                <input type="email" name="email" required> <i>email</i> 
 
-      </div> 
+              </div> 
 
-      <div class="inputBox"> 
+              <div class="inputBox"> 
 
-       <input type="password" required> <i>Password</i> 
+                <input type="password" name="password" required> <i>Password</i> 
 
-      </div> 
+              </div> 
 
-      <div class="links"> <a href="#">Forgot Password</a> <a href="#">Signup</a> 
+              <div class="links"> <a href="#">Forgot Password</a> <a href="#">Signup</a> 
 
-      </div> 
+              </div> 
 
-      <div class="inputBox"> 
+              <div class="inputBox"> 
 
-       <input type="submit" value="Login"> 
+                <input type="submit" value="Login" name="login"> 
 
-      </div> 
+              </div>
+            
+            </form> 
 
-     </div> 
+          </div> 
+
+        </div> 
 
     </div> 
 
-   </div> 
+</section>
 
-  </section>
-
-  <?php include_once("partials/footer.php"); ?>
+<?php include_once("partials/footer.php"); ?>

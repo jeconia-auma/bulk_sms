@@ -34,7 +34,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `otp` varchar(255) NOT NULL,
   `rights` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ;
 
 --
 -- Dumping data for table `users`

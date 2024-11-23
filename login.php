@@ -1,4 +1,4 @@
-<?php require_once("partials2/header.php"); ?>
+<?php require_once("partials/header2.php"); ?>
 
 
 <section>

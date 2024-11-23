@@ -1,4 +1,5 @@
 <?php
+// checks to see whether a user has been loged in if not it redirects to the login page
   require_once('includes/session_checker.php');
 ?>
 <!doctype html>

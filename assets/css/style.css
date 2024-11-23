@@ -12,7 +12,7 @@ body
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #000;
+  background: #fff;
 }
 section 
 {
@@ -43,7 +43,7 @@ section span
   display: block;
   width: calc(6.25vw - 2px);
   height: calc(6.25vw - 2px);
-  background: #181818;
+  background: #ececec;
   z-index: 2;
   transition: 1.5s;
 }
@@ -57,7 +57,7 @@ section .signin
 {
   position: absolute;
   width: 400px;
-  background: #222;  
+  background: #ffffff;  
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -79,7 +79,7 @@ section .signin .content
 section .signin .content h2 
 {
   font-size: 2em;
-  color: #0f0;
+  color: #2a9df4;
   text-transform: uppercase;
 }
 section .signin .content .form 
@@ -98,12 +98,12 @@ section .signin .content .form .inputBox input
 {
   position: relative;
   width: 100%;
-  background: #333;
+  background: #71bffa;
   border: none;
   outline: none;
   padding: 25px 10px 7.5px;
   border-radius: 4px;
-  color: #fff;
+  color: #000;
   font-weight: 500;
   font-size: 1em;
 }
@@ -113,7 +113,7 @@ section .signin .content .form .inputBox i
   left: 0;
   padding: 15px 10px;
   font-style: normal;
-  color: #aaa;
+  color: #353535;
   transition: 0.5s;
   pointer-events: none;
 }
@@ -133,23 +133,26 @@ section .signin .content .form .inputBox i
 }
 .signin .content .form .links a 
 {
-  color: #fff;
+  color: #2a9df4;
   text-decoration: none;
 }
 .signin .content .form .links a:nth-child(2)
 {
-  color: #0f0;
+  color: #2a9df4;
   font-weight: 600;
 }
 .signin .content .form .inputBox input[type="submit"]
 {
   padding: 10px;
-  background: #0f0;
-  color: #000;
+  background: #2a9df4;
+  color: #fff;
   font-weight: 600;
   font-size: 1.35em;
   letter-spacing: 0.05em;
   cursor: pointer;
+}
+.signin .content .form .inputBox input[type="submit"]:hover {
+  background-color: #00f;
 }
 input[type="submit"]:active
 {

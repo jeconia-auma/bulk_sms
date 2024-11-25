@@ -1,6 +1,6 @@
 <?php
     session_start();
-    unset($_SESSION['login']);
+    unset($_SESSION['login']['status']);
 
-    header("location: index.php");
+    header("location: login.php");
 ?>

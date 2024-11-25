@@ -1,6 +1,6 @@
 <?php
-// checks to see whether a user has been loged in if not it redirects to the login page
-  require_once('includes/session_checker.php');
+  require_once("includes/db_conn.php");
+  require_once("includes/session_checker.php");  
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,12 +16,39 @@
         <div class="sidenav">
             <div class="card">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><a href="index.php">Dashboard</a></li>
-                  <li class="list-group-item"><a href="users.php">Users</a></li>
-                  <li class="list-group-item"><a href="groups.php">Groups</a></li>
-                  <li class="list-group-item"><a href="messages.php">Messages</a></li>
+                  <a href="index.php">
+                    <li class="list-group-item">Dashboard</li>
+                  </a>
+                  <a href="users.php">
+                    <li class="list-group-item">Users</li>
+                  </a>
+                  <a href="subscribers.php">
+                    <li class="list-group-item">Subscribers</li>
+                  </a>
+                  <!-- Dropdown -->
+                  <li class="list-group-item dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                      Sms
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="sms_send.php">Send Sms</a></li>
+                      <li><a class="dropdown-item" href="sms_inbox.php">Sms Inbox</a></li>
+                      <li><a class="dropdown-item" href="sms_outbox.php">Sms Outbox</a></li>
+                    </ul>
+                  </li>
+                  <li class="list-group-item dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                      Settings
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                      <li><a class="dropdown-item" href="preferences.php">Preferences</a></li>
+                    </ul>
+                  </li>
                 </ul>
             </div>
+            <!-- Logout Button -->
+            <a href="logout.php" class="btn btn-danger w-100 mt-4">Logout</a>
         </div>
 
         <div class="container">
@@ -30,8 +57,8 @@
                     <div class="container-fluid">
                       <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" style="color: #2a9df4;" type="submit">Search</button>
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
                       </form>
                     </div>
-                  </nav>
+                </nav>
             </header>

@@ -1,21 +1,22 @@
 <?php
     require_once('partials/header.php');
 
-    $sql = 'select * from users';
+    $sql = 'select * from subscription_management';
     $result = mysqli_query($conn, $sql);
 
     $count = mysqli_num_rows($result);
 ?>
     <div class="content">
-        <h3>Users</h3>
+        <h3>Subscritpions</h3>
         <table class="table table-striped">
             <tr>
-                <th>#</th>
-                <th>Name</th>
                 <th>ID</th>
-                <th>Phone</th>
-                <th>E-mail</th>
-                <th>Action</th>
+                <th>MSISDN</th>
+                <th>OFFER CODE</th>
+                <th>STATUS</th>
+                <th>CREATED</th>
+                <th>UPDATED</th>
+                <th>ACTION</th>
             </tr>
             <?php
                 if($count > 0){
@@ -23,11 +24,12 @@
                     while($row = mysqli_fetch_assoc($result)){
                         ?>
                             <tr>
-                                <td><?php echo $sn; ?></td>
-                                <td><?php echo($row['firstName']." ".$row['middleName']." ".$row['lastName']); ?></td>
-                                <td>36149028</td>
-                                <td>0708301830</td>
-                                <td>jeconiaauma@gmail.com</td>
+                                <td><?php echo $row['id']; ?></td>
+                                <td><?php echo($row['msisdn']); ?></td>
+                                <td><?php echo $row['offer_code']; ?></td>
+                                <td><?php echo $row['status']; ?></td>
+                                <td><?php echo $row['created']; ?></td>
+                                <td><?php echo $row['updated']; ?></td>
                                 <td>
                                     <a class="btn btn-success">Reset</a>
                                     <a class="btn btn-danger">delete</a>
@@ -36,6 +38,8 @@
                         <?php
                         $sn++;
                     }
+                }else {
+                    echo "<tr><td class='text-warning'>Nothing to see here</td></tr>";
                 }
             ?>
         </table>

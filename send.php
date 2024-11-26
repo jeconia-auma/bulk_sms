@@ -19,9 +19,10 @@
 
         if(!$result){
             $_SESSION['error_msg'] = "failed to send message";
-
+            header("location: sms_send.php");
         }else {
             $_SESSION['error_msg'] = "success";
+            header("location: sms_send.php");
         }
     }
 ?>

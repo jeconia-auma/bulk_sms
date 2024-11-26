@@ -8,12 +8,11 @@
 ?>
     <div class="content">
         <h3>Users</h3>
+        <a href="add_users.php" class="btn btn-primary">Add</a><br><br>
         <table class="table table-striped">
             <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>ID</th>
-                <th>Phone</th>
                 <th>E-mail</th>
                 <th>Action</th>
             </tr>
@@ -24,10 +23,8 @@
                         ?>
                             <tr>
                                 <td><?php echo $sn; ?></td>
-                                <td><?php echo($row['firstName']." ".$row['middleName']." ".$row['lastName']); ?></td>
-                                <td>36149028</td>
-                                <td>0708301830</td>
-                                <td>jeconiaauma@gmail.com</td>
+                                <td><?php echo($row['fullnames']); ?></td>
+                                <td><?php echo($row['email']); ?></td>
                                 <td>
                                     <a class="btn btn-success">Reset</a>
                                     <a class="btn btn-danger">delete</a>

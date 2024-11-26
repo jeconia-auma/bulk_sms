@@ -6,9 +6,12 @@
 
     $count = mysqli_num_rows($result);
 ?>
-    <div class="content">
-        <div class="dropdown">
-            <select name="formshow" class="form-select" id="formshow">
+<div class="content">
+    <div class="dropdown">
+        </div>
+        <br><br>
+        <form action="send.php" method="post" class="form form-hide active" id='individual' enctype="multipart/form-data">
+            <select name="shortcode" class="form-select" id="formshow">
                 <?php
                     if($count > 0){
                         $sn = 1;
@@ -23,9 +26,7 @@
                     }
                 ?>
             </select>
-        </div>
-        <br><br>
-        <form action="mailer.php" method="post" class="form form-hide active" id='individual' enctype="multipart/form-data">
+            <br>
             <div class="head">
                 <h3>Sms Body</h3>
             </div>
@@ -37,17 +38,17 @@
             </div>
             <br>
             <div class="input-group">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label for="flexCheckDefault">  Schedule</label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="margin-right: 5px;">
+                <label for="flexCheckDefault"><span style="width: 5px;"></span><span></span>Schedule</label>
             </div>
             <br>
             <div class="input-group" id="schedule">
                 <span class="input-group-text">Schedule</span>
-                <input type="datetime-local" class="form-control" placeholder="Enter Subject" aria-label="subject" name="subject">
+                <input type="datetime-local" class="form-control" placeholder="Enter Subject" aria-label="subject" name="schedule">
             </div>
             <br>
             <div class="buttons">
-                <button type="submit" class="btn btn-primary" name="send">Send</button>
+                <button type="submit" class="btn btn-primary" name="sms_send">Send SMS</button>
             </div>
         </form>
     </div>

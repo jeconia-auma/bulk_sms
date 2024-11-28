@@ -30,7 +30,7 @@
                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
                       Sms
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="">
                       <li><a class="dropdown-item" href="sms_send.php">Send Sms</a></li>
                       <li><a class="dropdown-item" href="sms_inbox.php">Sms Inbox</a></li>
                       <li><a class="dropdown-item" href="sms_outbox.php">Sms Outbox</a></li>
@@ -40,7 +40,7 @@
                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">
                       Settings
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="">
                       <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                       <li><a class="dropdown-item" href="preferences.php">Preferences</a></li>
                     </ul>

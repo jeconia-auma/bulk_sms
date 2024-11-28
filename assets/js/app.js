@@ -13,6 +13,11 @@
 //     else activateForm(1);
 // });
 
+// Select all dropdown toggles
+// Select all dropdown toggles
+// Add event listeners to all dropdown toggles
+
+
 const flexCheckDefault = document.getElementById("flexCheckDefault");
 const schedule = document.getElementById("schedule");
 // schedule.style.visibility = "vissible";
@@ -24,4 +29,10 @@ flexCheckDefault.addEventListener("change", () => {
     } else {
         schedule.style.visibility = "hidden";
     }
+});
+
+const dropdown = document.querySelector(".dropdown");
+const dropdown_menu = document.querySelector(".dropdown-menu");
+dropdown.addEventListener(click, ()=>{
+    dropdown_menu.style.display = "none";
 });

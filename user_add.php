@@ -8,10 +8,12 @@
         echo $email = validate_data($_POST['email']);
         $status = "pending";
         echo $password = validate_data($_POST['password']);
+        //hash password
+        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
         $status = "pending";
         echo $otp = 1250;
 
-        echo $sql = "insert into users (`fullnames`, `email`, `password`, `otp`, `rights`) VALUES ('$fullnames', '$email', '$password', '$otp', 1)";
+        echo $sql = "insert into users (`fullnames`, `email`, `password`, `otp`, `rights`) VALUES ('$fullnames', '$email', '$hashed_password', '$otp', 1)";
         $result = mysqli_query($conn, $sql);
 
         if(!$result){

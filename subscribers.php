@@ -6,9 +6,11 @@
 
     $count = mysqli_num_rows($result);
 ?>
-    <div class="content">
-        <h3>Subscritpions</h3>
-        <table class="table table-striped">
+
+<section id="table-page" class="table-page">
+    <h2>Subscription Management Table</h2>
+    <table>
+        <thead>
             <tr>
                 <th>ID</th>
                 <th>MSISDN</th>
@@ -18,30 +20,40 @@
                 <th>UPDATED</th>
                 <th>ACTION</th>
             </tr>
-            <?php
-                if($count > 0){
-                    $sn = 1;
-                    while($row = mysqli_fetch_assoc($result)){
-                        ?>
-                            <tr>
-                                <td><?php echo $row['id']; ?></td>
+        </thead>
+        <tbody>
+        <?php
+            if($count > 0){
+                $sn = 1;
+                while($row = mysqli_fetch_assoc($result)){
+                    ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
                                 <td><?php echo($row['msisdn']); ?></td>
                                 <td><?php echo $row['offer_code']; ?></td>
                                 <td><?php echo $row['status']; ?></td>
                                 <td><?php echo $row['created']; ?></td>
                                 <td><?php echo $row['updated']; ?></td>
-                                <td>
-                                    <a class="btn btn-success">Reset</a>
-                                    <a class="btn btn-danger">delete</a>
-                                </td>
-                            </tr>
-                        <?php
-                        $sn++;
-                    }
-                }else {
-                    echo "<tr><td class='text-warning'>Nothing to see here</td></tr>";
+                            <td>
+                            <button class="action suspend">Suspend</button>
+                            <button class="action delete">Delete</button>
+                            </td>
+                        </tr>
+                    <?php
+                    $sn++;
                 }
-            ?>
-        </table>
-    </div>
-<?php require_once('partials/footer.php'); ?>
+            }else {
+                ?>
+                <tr>
+                    <td colspan="7">Nothing to see here</td>
+                </tr>
+                <?php
+            }
+        ?>
+        </tbody>
+    </table>
+</section>
+
+<?php
+    include_once __DIR__ . "/partials/footer.php";
+?>

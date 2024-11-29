@@ -15,15 +15,15 @@
             $schedule = validate_date($_POST['schedule']);
         }
 
-        $sql = "insert into content_message (`message`, `offer_code`, `sendtime`, `status`) VALUES ('$message', '$shortcode', '$schedule', '$status')";
+        echo $sql = "insert into content_message (`message`, `offer_code`, `sendtime`, `status`) VALUES ('$message', '$shortcode', '$schedule', '$status')";
         $result = mysqli_query($conn, $sql);
 
         if(!$result){
             $_SESSION['error_msg'] = "failed to send message";
-            header("location: sms_send.php");
+            header("location: send_sms.php");
         }else {
             $_SESSION['error_msg'] = "success";
-            header("location: sms_send.php");
+            header("location: send_sms.php");
         }
     }
 ?>

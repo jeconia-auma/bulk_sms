@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="sidenav">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li class="dropdown">
+                <span class="dropdown-toggle">Manage</span>
+                <ul class="dropdown-menu">
+                    <li><a href="#users">Users</a></li>
+                    <li><a href="#subscribers">Subscribers</a></li>
+                </ul>
+            </li>
+            <li><a href="#settings">Settings</a></li>
+        </ul>
+        <div class="logout">
+            <a href="#logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Admin Dashboard</h1>
+        </header>
+        <section id="dashboard" class="dashboard">
+            <div class="card">
+                <h2>Users</h2>
+                <p>Count: 120</p>
+            </div>
+            <div class="card">
+                <h2>Subscribers</h2>
+                <p>Count: 450</p>
+            </div>
+            <div class="card">
+                <h2>Messages</h2>
+                <p>Count: 300</p>
+            </div>
+        </section>
+
+        <section id="form-page" class="form-page">
+            <h2>Add User</h2>
+            <form action="" method="">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="admin">Admin</option>
+                    <option value="editor">Editor</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="table-page" class="table-page">
+            <h2>Users Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>Admin</td>
+                        <td>
+                            <button class="action suspend">Suspend</button>
+                            <button class="action delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>jane@example.com</td>
+                        <td>Editor</td>
+                        <td>
+                            <button class="action suspend">Suspend</button>
+                            <button class="action delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

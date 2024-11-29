@@ -1,5 +1,4 @@
-/* Author = Okoth Jeconia Auma */
-
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,141 +7,240 @@
 
 body {
     display: flex;
-    flex-wrap: wrap; /* Enables wrapping for smaller screens */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
+/* Sidenav */
 .sidenav {
     width: 20%;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    background-color: #2a9df4;
-    margin: 0;
-    padding: 10px;
+    background-color: #2196F3;
+    color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    border: none;
+    position: fixed;
+    height: 100%;
+    padding: 20px;
 }
 
-.sidenav .card ul {
-    padding: 0;
-    list-style: none;
-}
-
-.sidenav .card ul li {
-    background-color: #2a9df4;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    line-height: 40px;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: all 0.5s ease-in-out;
-    padding: 0 15px;
-    text-align: left;
-}
-
-.sidenav .card ul li:hover {
+.sidenav .logo {
     background-color: #00f;
-    color: #f2e6ff;
-    border: none;
+    border-radius: 50%;
+    width: 150px;
+    margin-left: 19%;
+    /* transform: translateX(50%); */
 }
 
-.sidenav .card ul li a {
+.sidenav .logo img {
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    /* border-radius: 50%; Makes the logo round */
+    margin-bottom: 20px;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidenav ul li {
+    margin: 15px 0;
+}
+
+.sidenav ul li a,
+.sidenav .dropdown-toggle {
     color: #fff;
     text-decoration: none;
-    display: block; /* Makes the entire list item clickable */
-}
-
-.container {
-    width: 80%;
-    padding: 0;
-    margin: 0;
-}
-
-header {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border-bottom: 1px solid #2a9df4;
-}
-
-.content {
-    padding: 12px;
-}
-
-.form-hide {
-    display: none;
-}
-
-.form-hide.active {
+    cursor: pointer;
     display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-h4 {
+.sidenav ul li a:hover,
+.sidenav .dropdown-toggle:hover {
+    background-color: #1976D2;
+}
+
+.sidenav .dropdown-menu {
+    display: none;
+    list-style-type: none;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.sidenav .dropdown-menu li a {
+    font-size: 0.9em;
+    padding: 8px;
+    background-color: #1E88E5;
+}
+
+.sidenav .dropdown-menu li a:hover {
+    background-color: #1565C0;
+}
+
+.sidenav .logout {
+    margin-top: auto;
+    background-color: #f44336;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidenav .logout a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidenav .logout:hover {
+    background-color: #d32f2f;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 20%;
+    padding: 20px;
+    width: 80%;
+}
+
+header h1 {
+    margin-bottom: 20px;
+}
+
+.dashboard {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     text-align: center;
 }
 
-button.btn-danger {
-    align-self: center;
+/* Form Page */
+.form-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown:hover {
-    background:#2a9df4
+.form-page form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1rem;
 }
 
-.dropdown-item:hover {
-    color: #fff;
-    background-color: #00f;
+.form-page form input,
+.form-page form select {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-page form input:focus,
+.form-page form select:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+.form-page form textarea {
+    height: 200px;
 }
 
 #schedule {
-    visibility: hidden;
-}
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    .sidenav {
-        width: 25%;
-    }
-
-    .container {
-        width: 75%;
-    }
+    display: none;
 }
 
+#inline {
+    display: inline;
+    margin: 0;
+    width: fit-content;
+}
+
+#flexCheckDefault {
+    display: inline;
+    height: 20px;
+    margin: 0;
+    width: fit-content;
+}
+
+.form-page form button {
+    height: 40px;
+    font-size: 1rem;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-page form button:hover {
+    background-color: #1976D2;
+}
+
+/* Table Page */
+.table-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-page table th,
+.table-page table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+.table-page .action {
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.table-page .suspend {
+    background-color: #ffa000;
+}
+
+.table-page .primary {
+    background-color: steelblue;
+}
+
+.table-page .delete {
+    background-color: #f44336;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
     .sidenav {
         width: 100%;
         height: auto;
-        position: relative; /* Removes sticky positioning for smaller screens */
+        position: relative;
     }
 
-    .sidenav .card ul li {
-        font-size: 1em;
-        line-height: 35px;
-    }
-
-    .container {
+    .main-content {
+        margin-left: 0;
         width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .sidenav {
-        padding: 5px;
-    }
-
-    .sidenav .card ul li {
-        font-size: 0.9em;
-        padding: 5px 10px;
-    }
-
-    .content {
-        padding: 8px;
     }
 }

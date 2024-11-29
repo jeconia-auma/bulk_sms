@@ -6,35 +6,61 @@
 
     $count = mysqli_num_rows($result);
 ?>
-    <div class="content">
-        <h3>Users</h3>
-        <a href="add_users.php" class="btn btn-primary">Add</a><br><br>
-        <table class="table table-striped">
+
+<section id="table-page" class="table-page">
+    <h2>Users Table</h2><br>
+    <a href="add_users.php" class="action primary">Add</a>
+    <table>
+        <thead>
             <tr>
-                <th>#</th>
+                <th>ID</th>
                 <th>Name</th>
-                <th>E-mail</th>
-                <th>Action</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
             </tr>
-            <?php
-                if($count > 0){
-                    $sn = 1;
-                    while($row = mysqli_fetch_assoc($result)){
-                        ?>
-                            <tr>
-                                <td><?php echo $sn; ?></td>
-                                <td><?php echo($row['fullnames']); ?></td>
-                                <td><?php echo($row['email']); ?></td>
-                                <td>
-                                    <a class="btn btn-success">Reset</a>
-                                    <a class="btn btn-danger">delete</a>
-                                </td>
-                            </tr>
-                        <?php
-                        $sn++;
-                    }
+        </thead>
+        <tbody>
+        <?php
+            if($count > 0){
+                $sn = 1;
+                while($row = mysqli_fetch_assoc($result)){
+                    ?>
+                        <tr>
+                            <td><?php echo $sn; ?></td>
+                            <td><?php echo($row['fullnames']); ?></td>
+                            <td><?php echo($row['email']); ?></td>
+                            <td>
+                                <?php
+                                    if($row['rights'] == 1){
+                                        echo "Admin";
+                                    }else if($row['rights'] == 2){
+                                        echo "Edittor";
+                                    }else {
+                                        echo "Viewer";
+                                    }
+                                ?>
+                            </td>
+                            <td>
+                            <button class="action suspend">Suspend</button>
+                            <button class="action delete">Delete</button>
+                            </td>
+                        </tr>
+                    <?php
+                    $sn++;
                 }
-            ?>
-        </table>
-    </div>
-<?php require_once('partials/footer.php'); ?>
+            }else {
+                ?>
+                <tr>
+                    <td>Nothing to see here</td>
+                </tr>
+                <?php
+            }
+        ?>
+        </tbody>
+    </table>
+</section>
+
+<?php
+    include_once __DIR__ . "/partials/footer.php";
+?>

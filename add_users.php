@@ -1,30 +1,33 @@
 <?php
     require_once('partials/header.php');
 ?>
-<div class="content">
-    <form action="user_add.php" method="post" class="form form-hide active" id='individual' enctype="multipart/form-data">
-        <div class="input-group">
-            <span class="input-group-text">Full Names</span>
-            <input type="text" class="form-control" placeholder="Enter Full Names" aria-label="fullnames" name="fullnames" required>
-        </div>
-        <br>
-        <div class="input-group">
-            <span class="input-group-text">Email</span>
-            <input type="email" class="form-control" placeholder="Enter E-mail" aria-label="email" name="email" required>
-        </div>
-        <br>
-        <div class="input-group">
-            <span class="input-group-text">Password</span>
-            <input type="password" class="form-control" placeholder="Enter Password" aria-label="password" name="password" required>
-        </div>
-        <br>
-        <div class="input-group">
-            <span class="input-group-text">Confirm Password</span>
-            <input type="password" class="form-control" placeholder="Enter Password" aria-label="password" name="conf_password" required>
-        </div>
-        <br>
-        <div class="buttons">
-            <button type="submit" class="btn btn-primary" name="add_user">Submit</button>
-        </div>
+
+<section id="form-page" class="form-page">
+    <h2>Add User</h2>
+    <form action="user_add.php" method="post">
+        <label for="name">Full Names:</label>
+        <input type="text" id="name" name="fullnames" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="conf_password">Confirm Password:</label>
+        <input type="password" id="conf_password" name="conf_password" required>
+
+        <label for="role">Rights:</label>
+        <select id="role" name="rights" required>
+            <option value="1">Admin</option>
+            <option value="2">Editor</option>
+            <option value="3">Viewer</option>
+        </select>
+
+        <button type="submit" id="submit" name="add_user">Submit</button>
     </form>
-<?php require_once('partials/footer.php'); ?>
+</section>
+
+<?php
+    require_once('partials/footer.php');
+?>

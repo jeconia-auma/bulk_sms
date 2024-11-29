@@ -1,21 +1,13 @@
-// const togleMenu = document.getElementById('formshow');
-// const formHide = document.querySelectorAll('.form-hide');
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-// function activateForm(num){
-//     formHide.forEach(forms => {
-//         forms.classList.remove('active');
-//     });
-//     formHide[num].classList.add('active');
-// }
-
-// togleMenu.addEventListener('change', ()=>{
-//     if(togleMenu.value == 'individual') activateForm(0);
-//     else activateForm(1);
-// });
-
-// Select all dropdown toggles
-// Select all dropdown toggles
-// Add event listeners to all dropdown toggles
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const dropdownMenu = toggle.nextElementSibling;
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+});
 
 
 const flexCheckDefault = document.getElementById("flexCheckDefault");
@@ -25,14 +17,8 @@ const schedule = document.getElementById("schedule");
 // Add an event listener for changes to the checkbox
 flexCheckDefault.addEventListener("change", () => {
     if (flexCheckDefault.checked) {
-        schedule.style.visibility = "visible";
+        schedule.style.display = "block";
     } else {
-        schedule.style.visibility = "hidden";
+        schedule.style.display = "none";
     }
-});
-
-const dropdown = document.querySelector(".dropdown");
-const dropdown_menu = document.querySelector(".dropdown-menu");
-dropdown.addEventListener(click, ()=>{
-    dropdown_menu.style.display = "none";
 });

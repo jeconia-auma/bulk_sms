@@ -4,16 +4,12 @@
     include_once __DIR__ . "/includes/data_validation.php";
 
     if(isset($_POST['add_user'])){
-        echo $fullnames = validate_data($_POST['fullnames']);
-        echo $email = validate_data($_POST['email']);
-        $status = "pending";
-        echo $password = validate_data($_POST['password']);
-        //hash password
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-        $status = "pending";
-        echo $otp = 1250;
+        $fullnames = validate_data($_POST['fullnames']);
+        $email = validate_data($_POST['email']);
+        $password = validate_data($_POST['password']);
+        $rights = $_POST['rights'];
 
-        echo $sql = "insert into users (`fullnames`, `email`, `password`, `otp`, `rights`) VALUES ('$fullnames', '$email', '$hashed_password', '$otp', 1)";
+        $sql = "insert into users (`fullnames`, `email`, `password`, `rights`) VALUES ('$fullnames', '$email', '$password', $rights)";
         $result = mysqli_query($conn, $sql);
 
         if(!$result){

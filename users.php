@@ -43,7 +43,7 @@
                             </td>
                             <td>
                             <button class="action suspend">Suspend</button>
-                            <button class="action delete">Delete</button>
+                            <a href="delete.php?remove=<?php echo $row['id']; ?>&table=users&callback=users" class="action delete">Delete</a>
                             </td>
                         </tr>
                     <?php

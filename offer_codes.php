@@ -30,8 +30,7 @@
                             <td><?php echo($row['offername']); ?></td>
                             <td><?php echo($row['offer_code']); ?></td>
                             <td>
-                                <button class="action suspend">Suspend</button>
-                                <button class="action delete">Delete</button>
+                                <a href="delete.php?remove=<?php echo $row['id']; ?>&table=offercode&callback=offer_codes" class="action delete">Delete</a>
                             </td>
                         </tr>
                     <?php

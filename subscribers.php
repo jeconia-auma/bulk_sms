@@ -35,8 +35,8 @@
                                 <td><?php echo $row['created']; ?></td>
                                 <td><?php echo $row['updated']; ?></td>
                             <td>
-                            <button class="action suspend">Suspend</button>
-                            <button class="action delete">Delete</button>
+                            <!-- <button class="action suspend">Suspend</button> -->
+                            <a href="delete.php?remove=<?php echo $row['id']; ?>&table=subscription_management&callback=subscribers" class="action delete">Delete</a>
                             </td>
                         </tr>
                     <?php

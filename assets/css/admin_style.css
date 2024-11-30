@@ -25,19 +25,15 @@ body {
 }
 
 .sidenav .logo {
-    background-color: #00f;
-    border-radius: 50%;
-    width: 150px;
+    width: 200px;
     margin-left: 19%;
-    /* transform: translateX(50%); */
 }
 
 .sidenav .logo img {
-    width: 100px;
+    width: 100%;
     max-width: 100px;
-    height: 100px;
+    object-fit: fill;
     object-fit: cover;
-    /* border-radius: 50%; Makes the logo round */
     margin-bottom: 20px;
 }
 

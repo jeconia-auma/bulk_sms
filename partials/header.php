@@ -27,6 +27,7 @@
                 </ul>
             </li>
             <li><a href="subscribers.php">Subscribers</a></li>
+            <li><a href="offer_codes.php">OfferCodes</a></li>
             <li><a href="users.php">Users</a></li>
             <!-- <li><a href="#settings">Settings</a></li> -->
         </ul>
